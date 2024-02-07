@@ -25,6 +25,7 @@ export default class UserController{
             })
         }
         req.session.userEmail = email
+        console.log(req.session.userEmail);
         // const products = ProductModel.getAll();
         // return res.render('products', { products, userEmail:req.session.userEmail });
         return res.send('Login Successful');
