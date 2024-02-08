@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 import { setLastVisit } from './src/middlewares/last-visit.middleware.js';
 
 import UserController from './src/controllers/user.controller.js';
+import JobController from './src/controllers/jobs.controller.js';
 
 const server = express();
 
@@ -32,6 +33,8 @@ server.use(ejsLayouts);
 // const productController = new ProductController();
 const userController = new UserController();
 
+const jobController = new JobController();
+
 server.get('/', (req, res) => {
     res.render('landingPage');
 })
@@ -41,6 +44,24 @@ server.post('/register', userController.postRegister);
 server.post('/login', userController.postLogin);
 
 server.get('/logout', userController.logout);
+
+server.get('/jobs', jobController.getAll);
+server.post('/jobs', jobController.postJob);
+server.get('/jobs/:id', jobController.getById);
+server.put('/jobs/:id', jobController.updateJob);
+server.delete('/jobs/:id', jobController.deleteJob);
+
+server.get('/jobs/:id/applicants', jobController.getApplicantsByJobId);
+server.post('/jobs/:id/applicants', jobController.addApplicant);
+server.get('/jobs/:id/applicants/:applicantId', jobController.getApplicantByJobAndUserId);
+server.put('/jobs/:id/applicants/:applicantId', jobController.updateApplicantByJobAndUserId);
+server.delete('/jobs/:id/applicants/:applicantId', jobController.removeApplicantByJobAndUserId);
+
+server.get('/jobs/:id/update', jobController.showUpdateForm);
+server.post('/jobs/:id/update', jobController.processUpdateForm);
+
+server.get('/jobs/:id/delete', jobController.deleteJobById);
+server.post('/apply/:id', jobController.applyToJob);
 
 server.use(express.static('./src/views'))
 server.use(express.static('public'));
