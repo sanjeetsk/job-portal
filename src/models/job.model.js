@@ -31,7 +31,7 @@ export default class JobModel {
         return jobs;
     }
 
-    static addJob(_id, jobcategory, jobdesignation, joblocation, companyname, salary, applyby, skillsrequired, numberofopenings, jobposted, applicants) {
+    static addJob(jobcategory, jobdesignation, joblocation, companyname, salary, applyby, skillsrequired, numberofopenings, jobposted, applicants) {
         let newJob = new JobModel(
             jobs.length + 1,
             jobcategory,
