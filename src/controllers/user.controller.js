@@ -1,5 +1,6 @@
 // import ProductModel from "../models/productModel.js";
 import UserModal from "../models/user.model.js";
+import JobModel from "../models/job.model.js";
 
 export default class UserController{
     getRegister(req, res){
@@ -24,11 +25,10 @@ export default class UserController{
                 errorMessage: 'Invalid Credentials'
             })
         }
-        req.session.userEmail = email
+        req.session.userEmail = email;
         console.log(req.session.userEmail);
-        // const products = ProductModel.getAll();
-        // return res.render('products', { products, userEmail:req.session.userEmail });
-        return res.send('Login Successful');
+        const jobs = JobModel.getAll();
+        return res.render('jobs', { jobs, userEmail:req.session.userEmail})
     }
 
     logout(req, res) {

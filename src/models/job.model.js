@@ -70,7 +70,7 @@ export default class JobModel {
 const jobs = [
     new JobModel(
         1,
-        tech,
+        "tech",
         "Software Developer",
         "New York City",
         "ABC Company",
@@ -83,7 +83,7 @@ const jobs = [
     ),
     new JobModel(
         2,
-        non - tech,
+        "non - tech",
         "Manager",
         "New York City",
         "XYZ Company",

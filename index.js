@@ -51,17 +51,17 @@ server.get('/jobs/:id', jobController.getJobById);
 server.put('/jobs/:id', jobController.updateJob);
 server.delete('/jobs/:id', jobController.deleteJob);
 
-server.get('/jobs/:id/applicants', jobController.getApplicantsByJobId);
-server.post('/jobs/:id/applicants', jobController.addApplicant);
-server.get('/jobs/:id/applicants/:applicantId', jobController.getApplicantByJobAndUserId);
-server.put('/jobs/:id/applicants/:applicantId', jobController.updateApplicantByJobAndUserId);
-server.delete('/jobs/:id/applicants/:applicantId', jobController.removeApplicantByJobAndUserId);
+// server.get('/jobs/:id/applicants', jobController.getApplicantsByJobId);
+// server.post('/jobs/:id/applicants', jobController.addApplicant);
+// server.get('/jobs/:id/applicants/:applicantId', jobController.getApplicantByJobAndUserId);
+// server.put('/jobs/:id/applicants/:applicantId', jobController.updateApplicantByJobAndUserId);
+// server.delete('/jobs/:id/applicants/:applicantId', jobController.removeApplicantByJobAndUserId);
 
-server.get('/jobs/:id/update', jobController.showUpdateForm);
-server.post('/jobs/:id/update', jobController.processUpdateForm);
+// server.get('/jobs/:id/update', jobController.showUpdateForm);
+// server.post('/jobs/:id/update', jobController.processUpdateForm);
 
-server.get('/jobs/:id/delete', jobController.deleteJobById);
-server.post('/apply/:id', jobController.applyToJob);
+// server.get('/jobs/:id/delete', jobController.deleteJobById);
+// server.post('/apply/:id', jobController.applyToJob);
 
 server.use(express.static('./src/views'))
 server.use(express.static('public'));
