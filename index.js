@@ -46,6 +46,7 @@ server.post('/login', userController.postLogin);
 server.get('/logout', userController.logout);
 
 server.get('/jobs', jobController.getAll);
+server.get('/new', jobController.getAddJob);
 server.post('/jobs', jobController.postJob);
 server.get('/jobs/:id', jobController.getJobById);
 server.put('/jobs/:id', jobController.updateJob);
