@@ -1,0 +1,22 @@
+<h5 class="card-title">
+    <%= job.companyname %>
+</h5>
+<p class="card-text">
+    <%= job.jobdesignation %>
+</p>
+<p class="card-text">
+    <%= job.joblocation %>
+</p>
+<p class="card-text">
+    <%= job.salary %>
+</p>
+<p>
+    <% job.skillsrequired.map((val)=> { %>
+        <button type="button" class="btn btn-outline-primary btn-sm">
+            <%= val %>
+        </button>
+        <%}) %>
+</p>
+<div class="d-grid gap-2">
+    <a href="" class="btn btn-outline-success" type="button">Apply</a>
+</div>
